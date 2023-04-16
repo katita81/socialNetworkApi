@@ -27,7 +27,7 @@ connection.once('open', async () => {
     await User.collection.insertMany(users);
     await Thought.collection.insertMany(Thoughts);
 
-    // loop through the saved videos, for each video we need to generate a video response and insert the video responses
+    // loop through the saved thoughts, for each thought we need to generate a thought response and insert the thought responses
     console.table(users);
     console.table(Thoughts);
     console.info('Seeding complete! 🌱');

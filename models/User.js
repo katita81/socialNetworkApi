@@ -1,9 +1,9 @@
 const { Schema, model } = require('mongoose');
 
 // Schema to create User model
-const user = new Schema(
+const userSchema = new Schema(
     {
-        userName: {
+        username: {
             type: String,
             unique: true,
             require: true,
@@ -38,7 +38,7 @@ const user = new Schema(
     }
 );
 
-// Create a virtual property `fullName` that gets and sets the user's full name
+// Create a virtual that counts friends
 userSchema.virtual('friendCount').get(function () {
     return this.friends.length;
 });

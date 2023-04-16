@@ -16,7 +16,7 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
     // create a new thought
-    createVideo(req, res) {
+    createThought(req, res) {
         Thought.create(req.body)
             .then((thought) => {
                 return User.findOneAndUpdate(
@@ -38,7 +38,7 @@ module.exports = {
             });
     },
     updateThought(req, res) {
-        Video.findOneAndUpdate(
+        Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
             { $set: req.body },
             { runValidators: true, new: true }
@@ -74,7 +74,7 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
     // Add a thought response
-    addVideoResponse(req, res) {
+    addThoughtResponse(req, res) {
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
             { $addToSet: { responses: req.body } },
