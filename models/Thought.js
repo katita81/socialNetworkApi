@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const reactionSchema = require('./Reaction')
 
 // Schema to create Post model
 const thoughtSchema = new Schema(
@@ -8,8 +9,10 @@ const thoughtSchema = new Schema(
         require: true,
         minLength: 1,
         maxLength: 128,
-        reactions: [{ type: Schema.Types.ObjectId, ref: 'reaction' }],
     },
+    
+    reactions:[reactionSchema],
+
     createdAt:       {
         type: Date,
         default: Date.now,
@@ -26,7 +29,8 @@ const thoughtSchema = new Schema(
             virtuals: true,
         },
         id: false,
-    }
+    },
+
 );
 
 // Create a virtual property `commentCount` that gets the amount of comments per post
