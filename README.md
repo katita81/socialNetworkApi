@@ -1,4 +1,5 @@
 # Social Network API
+
 This is an  application where users can share their thoughts; add friends and add reactions to the thoughts
 
 I run the application by runnig the command npm start in the command line.
@@ -59,7 +60,10 @@ when I want to remove a friend. I select "Delete friend", put in the URL the use
 
 Link to the walk trough video. There are 2 videos, the second video is a very short one, the continuation of video 1 :
 
+<https://drive.google.com/file/d/1eNhjYF_2Jy9jAKtqScO4PpXA-130d2TY/view>
+<https://drive.google.com/file/d/1j9Sl-fRDRmuatXMD7Nzqlp0xSrSyYLrm/view>
 
 GitHub Repository:
-<https://github.com/katita81/employeeTracker_a12>
+
+<https://github.com/katita81/socialNetworkApi.git>
 
