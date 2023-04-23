@@ -2,7 +2,6 @@ const { Thought, User } = require('../models');
 
 module.exports = {
     getThoughts(req, res) {
-        console.log('it is here')
         Thought.find()
             .then((thoughts) => res.json(thoughts))
             .catch((err) => {
@@ -59,15 +58,6 @@ module.exports = {
     },
     deleteThought(req, res) {
         Thought.findOneAndRemove({ _id: req.params.thoughtId })
-            // .then((thought) =>
-            //     !thought
-            //         ? res.status(404).json({ message: 'No thought with this id!' })
-            //         : User.findOneAndUpdate(
-            //             { thoughts: req.params.thoughtId },
-            //             { $pull: { thought: req.params.thoughtId } },
-            //             { new: true }
-            //         )
-            // )
             .then((user) =>
                 !user
                     ? res
