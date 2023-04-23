@@ -9,8 +9,6 @@ module.exports = {
     getSingleUser(req, res) {
         User.findOne({ _id: req.params.userId })
             .select('-__v')
-            .populate('friends')
-            .populate('thoughts')
             .then((user) =>
                 !user
                     ? res.status(404).json({ message: 'No user with that ID' })
@@ -49,12 +47,6 @@ module.exports = {
 
             .catch((err) => res.status(500).json(err));
     },
-    // // add friend
-    // addFriend(req, res) {
-    //     User.create(req.body)
-    //         .then((dbUserData) => res.json(dbUserData))
-    //         .catch((err) => { console.log(err); return res.status(500).json(err); });
-    // },
 
      async addFriend(req, res) {
         try {
@@ -85,18 +77,5 @@ module.exports = {
             res.status(500).json(err);
         }
     },
-
-
-    // //delete friend
-    // deleteFriend(req, res) {
-    //     User.findOneAndDelete({ _id: req.params.userId })
-    //         .then((user) =>
-    //             !user
-    //                 ? res.status(404).json({ message: 'No friend with that ID' })
-    //                 : res.json(user)
-    //         )
-
-    //         .catch((err) => res.status(500).json(err));
-    // },
 
 };
